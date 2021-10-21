@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: "Ecommerce App",
       theme: ThemeData(
         primarySwatch: Colors.pink,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: BottomBarScreen(),
     );

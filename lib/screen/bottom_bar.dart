@@ -1,10 +1,11 @@
-import 'package:ecommerceapp/screen/user.dart';
+import 'package:flutter/material.dart';
+import "../widgets/icons.dart";
 
+import './user.dart';
 import "./cart.dart";
 import "./feeds.dart";
 import "./search.dart";
 import "./home.dart";
-import 'package:flutter/material.dart';
 
 class BottomBarScreen extends StatefulWidget {
   BottomBarScreen({Key? key}) : super(key: key);
@@ -74,25 +75,25 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
               unselectedItemColor: Colors.grey,
               selectedItemColor: Colors.purple,
               currentIndex: _selectedPageIndex,
-              items: const [
+              items: [
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
+                  icon: Icon(MyAppIcons.home),
                   label: "Home",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.rss_feed),
+                  icon: Icon(MyAppIcons.feeds),
                   label: "Feeds",
                 ),
-                BottomNavigationBarItem(
+                const BottomNavigationBarItem(
                   icon: Icon(null),
                   label: "Search",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_bag),
+                  icon: Icon(MyAppIcons.cart),
                   label: "Cart",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
+                  icon: Icon(MyAppIcons.user),
                   label: "User",
                 ),
               ],
@@ -106,10 +107,10 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         padding: const EdgeInsets.all(8.0),
         child: FloatingActionButton(
           hoverElevation: 10,
-          splashColor: Colors.green,
+          splashColor: Colors.grey,
           tooltip: "Search",
           elevation: 4,
-          child: const Icon(Icons.search),
+          child: Icon(MyAppIcons.search),
           onPressed: () => setState(
             () {
               _selectedPageIndex = 2;
