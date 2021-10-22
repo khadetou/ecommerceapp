@@ -28,11 +28,11 @@ class _UserInfoState extends State<UserInfo> {
 
   @override
   void initState() {
-    super.initState();
     _scrollController = ScrollController();
     _scrollController!.addListener(() {
       setState(() {});
     });
+    super.initState();
   }
 
   @override
@@ -124,7 +124,7 @@ class _UserInfoState extends State<UserInfo> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Padding(
-                      padding: EdgeInsets.only(left: 8.0),
+                      padding: EdgeInsets.all(15.0),
                       child: TextTitle(
                         text: "User Informaion",
                       ),
