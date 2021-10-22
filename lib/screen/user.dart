@@ -41,6 +41,7 @@ class _UserInfoState extends State<UserInfo> {
       body: Stack(
         children: <Widget>[
           CustomScrollView(
+            controller: _scrollController,
             slivers: <Widget>[
               SliverAppBar(
                 automaticallyImplyLeading: false,
@@ -163,6 +164,10 @@ class _UserInfoState extends State<UserInfo> {
                       title: "Log out",
                       subtitle: "",
                       index: 3,
+                    ),
+                    // to remove
+                    const SizedBox(
+                      height: 500,
                     )
                   ],
                 ),

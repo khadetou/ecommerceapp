@@ -3,17 +3,22 @@ import 'package:flutter/material.dart';
 class BuildFb extends StatelessWidget {
   const BuildFb({Key? key, required this.scrollController}) : super(key: key);
   final ScrollController scrollController;
+
   @override
   Widget build(BuildContext context) {
-    final double defaultTopMargin = 200.0 - 4.0;
-    final double scaleStart = 160.0;
-    final double scaleEnd = scaleStart / 2;
+    const double defaultTopMargin = 200.0 - 4.0;
+
+    const double scaleStart = 160.0;
+    const double scaleEnd = scaleStart / 2;
+
     double top = defaultTopMargin;
     double scale = 1.0;
 
     if (scrollController.hasClients) {
       double offset = scrollController.offset;
+
       top -= offset;
+
       if (offset < defaultTopMargin - scaleStart) {
         scale = 1.0;
       } else if (offset < defaultTopMargin - scaleEnd) {
