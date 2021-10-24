@@ -8,7 +8,7 @@ import "./search.dart";
 import "./home.dart";
 
 class BottomBarScreen extends StatefulWidget {
-  BottomBarScreen({Key? key}) : super(key: key);
+  const BottomBarScreen({Key? key}) : super(key: key);
 
   @override
   _BottomBarScreenState createState() => _BottomBarScreenState();
