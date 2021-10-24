@@ -2,10 +2,12 @@
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:ecommerceapp/Colors/color.dart';
 import "package:flutter/material.dart";
+import 'package:provider/provider.dart';
 import "../widgets/build_fb.dart";
 import 'package:list_tile_switch/list_tile_switch.dart';
 import "../widgets/user_list.dart";
 import "../widgets/title.dart";
+import "../provider/dart_theme_provider.dart";
 
 class UserInfo extends StatefulWidget {
   const UserInfo({Key? key}) : super(key: key);
@@ -15,7 +17,6 @@ class UserInfo extends StatefulWidget {
 }
 
 class _UserInfoState extends State<UserInfo> {
-  bool _value = false;
   ScrollController? _scrollController;
   var top = 0.0;
 
@@ -37,6 +38,8 @@ class _UserInfoState extends State<UserInfo> {
 
   @override
   Widget build(BuildContext context) {
+    final themeChange = Provider.of<DarkThemeProvider>(context);
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -148,11 +151,11 @@ class _UserInfoState extends State<UserInfo> {
                       color: Colors.grey,
                     ),
                     ListTileSwitch(
-                      value: _value,
+                      value: themeChange.darkTheme,
                       leading: const Icon(Ionicons.ios_moon),
                       onChanged: (value) {
                         setState(() {
-                          _value = value;
+                          themeChange.darkTheme = value;
                         });
                       },
                       visualDensity: VisualDensity.comfortable,
